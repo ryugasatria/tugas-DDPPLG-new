@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page LKPD JavaScript - Variable</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --border-color: #e2e8f0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(135deg, #1e40af, var(--primary-color));
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.8rem;
+        }
+        header p {
+            margin: 0.2rem 0;
+            font-size: 1.1rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        section {
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-top: 4px solid var(--primary-color);
+        }
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-top: 0;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            font-size: 1.1rem;
+            color: #334155;
+        }
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        pre, code {
+            background-color: #f1f5f9;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+        }
+        pre {
+            padding: 1rem;
+            overflow-x: auto;
+            border-left: 3px solid var(--primary-color);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 0.75rem;
+            text-align: left;
+        }
+        th {
+            background-color: #f8fafc;
+        }
+        .answer-box {
+            background-color: #eff6ff;
+            border: 1px dashed var(--primary-color);
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 0.5rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>LEMBAR KERJA PESERTA DIDIK (LKPD)</h1>
+        <p>DASAR-DASAR PENGEMBANGAN PERANGKAT LUNAK DAN GIM</p>
+        <p>Materi: JavaScript - Variable</p>
+        <hr style="width: 50%; border: 0.5px solid rgba(255,255,255,0.3); margin: 1rem auto;">
+        <p><strong>Nama:</strong> Ryuga</p>
+        <p><strong>Kelas:</strong> X PPLG 2</p>
+    </header>
+
+    <div class="container">
+
+        <!-- A. IDENTITAS PEMBELAJARAN -->
+        <section>
+            <h2>A. IDENTITAS PEMBELAJARAN</h2>
+            <p><strong>Mata Pelajaran:</strong> Dasar-Dasar Pengembangan Perangkat Lunak dan Gim</p>
+            <p><strong>Materi:</strong> Variable pada JavaScript</p>
+            <p><strong>Alokasi Waktu:</strong> 2 × 45 menit</p>
+            <p><strong>Model Pembelajaran:</strong> Problem Based Learning / Discovery Learning</p>
+            <p><strong>Metode:</strong> Eksplorasi, praktik, diskusi, tanya jawab, refleksi</p>
+        </section>
+
+        <!-- B. TUJUAN PEMBELAJARAN -->
+        <section>
+            <h2>B. TUJUAN PEMBELAJARAN</h2>
+            <p>Setelah menyelesaikan kegiatan pembelajaran ini, peserta didik diharapkan mampu:</p>
+            <ol>
+                <li>Menjelaskan pengertian variable dengan bahasa sendiri.</li>
+                <li>Menjelaskan fungsi variable dalam program.</li>
+                <li>Membedakan let dan const secara sederhana.</li>
+                <li>Membuat variable menggunakan JavaScript.</li>
+                <li>Memberikan nama variable sesuai aturan penamaan.</li>
+                <li>Menyimpan data berupa teks dan angka ke dalam variable.</li>
+                <li>Menampilkan nilai variable menggunakan console.log()</li>
+                <li>Membuat program JavaScript sederhana yang menggunakan beberapa variable.</li>
+                <li>Menemukan dan memperbaiki kesalahan sederhana pada penggunaan variable.</li>
+            </ol>
+        </section>
+
+        <!-- C. PETUNJUK KESELAMATAN DAN KERJA -->
+        <section>
+            <h2>C. PETUNJUK KESELAMATAN DAN KERJA</h2>
+            <p>Dalam kegiatan praktik:</p>
+            <ul>
+                <li>Gunakan komputer/laptop dengan hati-hati.</li>
+                <li>Jangan menghapus file milik teman.</li>
+                <li>Simpan pekerjaan secara berkala.</li>
+                <li>Jangan menyalin kode teman tanpa memahami fungsinya.</li>
+                <li>Jika menemukan error, jangan panik.</li>
+                <li>Baca pesan error dan diskusikan penyebabnya.</li>
+                <li>Setiap anggota kelompok harus memahami hasil pekerjaan kelompok.[cite: 2]</li>
+            </ul>
+        </section>
+
+        <!-- D. APERSEPSI -->
+        <section>
+            <h2>D. APERSEPSI</h2>
+            <p>Bayangkan kamu sedang membuat aplikasi data siswa.</p>
+            <p>Program perlu mengetahui:</p>
+            <ul>
+                <li>Nama siswa</li>
+                <li>Kelas</li>
+                <li>Umur</li>
+                <li>Nilai</li>
+                <li>Jurusan</li>
+            </ul>
+            <p>Contohnya:</p>
+            <pre>Nama siswa = "Budi"
+Kelas = "XI RPL 1"
+Umur = 16
+Nilai = 85</pre>
+            <p>Menurutmu, bagaimana cara menyimpan informasi tersebut di dalam program?</p>
+            <p><strong>Tuliskan dugaanmu:</strong></p>
+            <div class="answer-box">Menggunakan variable untuk menampung data nama, kelas, umur, nilai, dan jurusan agar dapat dipanggil dan digunakan kembali dalam program.</div>
+            <img src="ss/d.jpeg" alt="Console Log Example" style="max-width: 100%; height: auto; border: 1px solid var(--border-color); border-radius: 4px; margin-top: 0.5rem;">    
+        </section>
+
+        <!-- E. AKTIVITAS 1 - MENGAMATI -->
+        <section>
+            <h2>E. AKTIVITAS 1 - MENGAMATI</h2>
+            <p>Perhatikan kode berikut[cite: 3]:</p>
+            <pre>let nama = "Budi";
+let umur = 16;
+let nilai = 85;
+console.log(nama);
+console.log(umur);
+console.log(nilai);</pre>
+            <p>Jalankan kode tersebut menggunakan browser[cite: 3].</p>
+
+
+            <h3>Pertanyaan</h3>
+            <ol>
+                <li>
+                    Apa yang ditampilkan pada Console?
+                    <div class="answer-box">Budi, 16, 85</div>
+                </li>
+                <li>
+                    Menurutmu, apa fungsi <code>nama</code>, <code>umur</code>, dan <code>nilai</code>?[cite: 3]
+                    <div class="answer-box">Berfungsi sebagai pengenal atau nama variable untuk menyimpan data teks ("Budi") dan angka (16, 85).</div>
+                </li>
+                <li>
+                    Apa yang terjadi jika kode berikut dijalankan?
+
+                    <pre>console.log(nama);</pre>
+                    <strong>Jawaban:</strong>[cite: 3]
+                    <div class="answer-box">Menampilkan nilai dari variable nama yaitu "Budi" ke console.</div>
+                      <img src="ss/E .jpeg" alt="Console Log Example" style="max-width: 100%; height: auto; border: 1px solid var(--border-color); border-radius: 4px; margin-top: 0.5rem;">    "
+                </li>
+                <li>
+                    Menurut dugaanmu, apa yang dimaksud dengan variable?[cite: 3]
+                    <div class="answer-box">Variable adalah wadah atau tempat penyimpanan data di dalam memori program.</div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- F. AKTIVITAS 2 - MENGENAL VARIABLE -->
+        <section>
+            <h2>F. AKTIVITAS 2 - MENGENAL VARIABLE</h2>
+            <h3>1. Apa itu Variable?[cite: 3]</h3>
+            <p>Variable dapat dianggap sebagai tempat untuk menyimpan sebuah data agar data tersebut dapat digunakan kembali oleh program[cite: 3].</p>
+            <p>Contoh: <code>let nama = "Andi";</code>[cite: 3, 4]</p>
+            <p>Pada kode tersebut, terdapat[cite: 4]:</p>
+            <table>
+                <tr>
+                    <th>Bagian</th>
+                    <th>Fungsi</th>
+                </tr>
+                <tr>
+                    <td><code>let</code></td>
+                    <td>Membuat variable[cite: 4]</td>
+                </tr>
+                <tr>
+                    <td><code>nama</code></td>
+                    <td>Nama variable[cite: 4]</td>
+                </tr>
+                <tr>
+                    <td><code>=</code></td>
+                    <td>Memberikan nilai[cite: 4]</td>
+                </tr>
+                <tr>
+                    <td><code>"Andi"</code></td>
+                    <td>Nilai yang disimpan[cite: 4]</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- G. AKTIVITAS 3 - PRAKTIK MEMBUAT VARIABLE -->
+        <section>
+            <h2>G. AKTIVITAS 3 - PRAKTIK MEMBUAT VARIABLE</h2>
+            <p>Buat file: <code>variable.html</code>[cite: 4]. Kemudian masukkan kode berikut[cite: 4]:</p>
+            <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Belajar Variable&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;script&gt;
+let nama = "Budi";
+let kelas = "XI RPL 1";
+let umur = 16;
+console.log(nama);
+console.log(kelas);
+console.log(umur);
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+            <p>Buka file tersebut menggunakan browser[cite: 4]. Kemudian buka: <strong>Klik kanan → Inspect → Console</strong>[cite: 5]</p>
+            
+            <h3>Hasil Pengamatan</h3>
+            <p>Tuliskan hasil yang muncul pada Console[cite: 5]:</p>
+            <div class="answer-box">
+                Nama : Budi<br>
+                Kelas : XI RPL 1<br>
+                Umur : 16
+                 <img src="ss/g.jpeg" alt="Console Log Example" style="max-width: 100%; height: auto; border: 1px solid var(--border-color); border-radius: 4px; margin-top: 0.5rem;">    "
+            </div>
+        </section>
+
+        <!-- H. AKTIVITAS 4 - EKSPERIMEN -->
+        <section>
+            <h2>H. AKTIVITAS 4 - EKSPERIMEN</h2>
+            <p>Sekarang ubahlah program sebelumnya[cite: 5]. Ubah nilai nama, kelas, dan umur sesuai data kamu[cite: 5].</p>
+            <h3>Pertanyaan</h3>
+            <ol>
+                <li>
+                    Apakah hasil pada Console berubah?[cite: 5]
+                    <div class="answer-box">Ya, berubah sesuai dengan data yang dimasukkan.</div>
+                </li>
+                <li>
+                    Bagian kode mana yang kamu ubah?[cite: 5]
+                    <div class="answer-box">Bagian nilai string pada variable nama dan kelas, serta nilai angka pada variable umur.</div>
+                </li>
+                <li>
+                    Mengapa program dapat menampilkan data yang baru?[cite: 6]
+                    <div class="answer-box">Karena program membaca nilai terbaru yang tersimpan di dalam masing-masing variable saat dieksekusi.</div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- I. AKTIVITAS 5 - VARIABLE UNTUK MENYIMPAN BERBAGAI DATA -->
+        <section>
+            <h2>I. AKTIVITAS 5 - VARIABLE UNTUK MENYIMPAN BERBAGAI DATA</h2>
+            <p>JavaScript dapat menyimpan berbagai jenis data[cite: 6]. Perhatikan[cite: 6]:</p>
+            <pre>let nama = "Andi";
+let umur = 17;
+let tinggi = 170;
+let aktif = true;</pre>
+            <p>Identifikasi data tersebut[cite: 6]:</p>
+            <table>
+                <tr>
+                    <th>Variable</th>
+                    <th>Nilai</th>
+                    <th>Jenis Data</th>
+                </tr>
+                <tr>
+                    <td>nama</td>
+                    <td>"Andi"</td>
+                    <td>Teks (String)[cite: 6]</td>
+                </tr>
+                <tr>
+                    <td>umur</td>
+                    <td>17</td>
+                    <td>Angka (Number)[cite: 6]</td>
+                </tr>
+                <tr>
+                    <td>tinggi</td>
+                    <td>170</td>
+                    <td>Angka (Number)[cite: 6]</td>
+                </tr>
+                <tr>
+                    <td>aktif</td>
+                    <td>true</td>
+                    <td>Boolean (True/False)[cite: 6]</td>
+                </tr>
+            </table>
+            <h3>Kesimpulan</h3>
+            <p>Data yang ditulis menggunakan tanda kutip seperti <code>"Andi"</code> merupakan data: <span class="answer-box" style="display:inline-block; padding: 0.2rem 0.5rem;">Teks (String)</span></p>
+            <p>Sedangkan <code>17</code> merupakan data: <span class="answer-box" style="display:inline-block; padding: 0.2rem 0.5rem;">Angka (Number)</span>[cite: 6]</p>
+        </section>
+
+        <!-- J. AKTIVITAS 6 – MENGENAL let DAN const -->
+        <section>
+            <h2>J. AKTIVITAS 6 – MENGENAL let DAN const</h2>
+            <p>Perhatikan kode berikut[cite: 7]:</p>
+            <pre>let umur = 16;
+umur = 17;
+console.log(umur);</pre>
+            <p>Jalankan program tersebut[cite: 7]. Hasil: <span class="answer-box" style="display:inline-block; padding: 0.2rem 0.5rem;">17</span>
+             <img src="ss/j.jpeg" alt="Console Log Example" style="max-width: 100%; height: auto; border: 1px solid var(--border-color); border-radius: 4px; margin-top: 0.5rem;">    "
+            <h3>Kesimpulan Sementara</h3></p>
+            <p>Sekarang coba[cite: 7]:</p>
+            <pre>const nama = "Budi";
+nama = "Andi";
+console.log(nama);</pre>
+            <p>Apa yang terjadi? 
+                <span class="answer-box" style="display:inline-block; padding: 0.2rem 0.5rem;">Terjadi error (TypeError: Assignment to constant variable) karena nilai const tidak dapat diubah setelah dideklarasikan.</span></p>
+             <img src="ss/j2.jpeg" alt="Console Log Example" style="max-width: 100%; height: auto; border: 1px solid var(--border-color); border-radius: 4px; margin-top: 0.5rem;">    "
+            <p>Lengkapi tabel berikut[cite: 7]:</p>
+            <table>
+                <tr>
+                    <th>Keyword</th>
+                    <th>Nilai dapat diubah?</th>
+                    <th>Kegunaan sederhana</th>
+                </tr>
+                <tr>
+                    <td>let</td>
+                    <td>Ya[cite: 7, 8]</td>
+                    <td>Untuk data yang masih mungkin berubah[cite: 8]</td>
+                </tr>
+                <tr>
+                    <td>const</td>
+                    <td>Tidak[cite: 7, 8]</td>
+                    <td>Untuk data yang tidak perlu diubah / konstan[cite: 8]</td>
+                </tr>
+            </table>
+            <p><strong>Contoh penggunaan:</strong></p>
+            <pre>let nilai = 80;
+nilai = 90;
+
+const namaSekolah = "SMKN 1 Garut";[cite: 8]</pre>
+        </section>
+
+        <!-- K. AKTIVITAS 7 - ATURAN PENAMAAN VARIABLE -->
+        <section>
+            <h2>K. AKTIVITAS 7 - ATURAN PENAMAAN VARIABLE</h2>
+            <p>Perhatikan nama variable berikut[cite: 8]: <code>let nama;</code>, <code>let namaSiswa;</code>, <code>let nama siswa;</code>, <code>let umur2;</code>[cite: 8]</p>
+            <p>Beberapa aturan dasar[cite: 8]:</p>
+            <p><strong>Diperbolehkan[cite: 8, 9]:</strong> <code>let nama;</code>, <code>let namaSiswa;</code>, <code>let nilai1;</code>[cite: 8, 9]</p>
+            <p><strong>Tidak diperbolehkan[cite: 9]:</strong> <code>let 1nama;</code>, <code>let nama siswa;</code>, <code>let nama-siswa;</code>[cite: 9]</p>
+            <p>JavaScript membedakan huruf besar dan kecil (case-sensitive)[cite: 9]:</p>
+            <pre>let nama = "Andi";
+console.log(nama);</pre>
+            <p>Berbeda dengan: <code>console.log(Nama);</code>[cite: 9]</p>
+        </section>
+
+        <!-- L. AKTIVITAS 8 - MANA YANG BENAR? -->
+        <section>
+            <h2>L. AKTIVITAS 8 - MANA YANG BENAR?</h2>
+            <p>Berikan tanda ✓ pada nama variable yang benar dan tanda X pada nama variable yang salah[cite: 9].</p>
+            <table>
+                <tr>
+                    <th>No.</th>
+                    <th>Nama Variable</th>
+                    <th>✓ / X</th>
+                </tr>
+                <tr><td>1</td><td>nama</td><td>✓</td></tr>
+                <tr><td>2</td><td>namaSiswa</td><td>✓</td></tr>
+                <tr><td>3</td><td>nama_siswa</td><td>✓</td></tr>
+                <tr><td>4</td><td>2nama</td><td>X</td></tr>
+                <tr><td>5</td><td>nama siswa</td><td>X</td></tr>
+                <tr><td>6</td><td>nilaiAkhir</td><td>✓</td></tr>
+                <tr><td>7</td><td>nilai1</td><td>✓</td></tr>
+                <tr><td>8</td><td>nilai-akhir</td><td>X</td></tr>
+                <tr><td>9</td><td>Alamat</td><td>✓</td></tr>
+                <tr><td>10</td><td>alamatSiswa</td><td>✓</td></tr>
+            </table>
+            <p><strong>Perbaiki nama variable yang salah[cite: 9, 10]:</strong></p>
+            <p><code>2nama</code> Menjadi: <span class="answer-box" style="display:inline-block; padding: 0.2rem 0.5rem;">duaNama / nama2</span>[cite: 10]</p>
+            <p><code>nama siswa</code> Menjadi: <span class="answer-box" style="display:inline-block; padding: 0.2rem 0.5rem;">namaSiswa / nama_siswa</span>[cite: 10]</p>
+            <p><code>nilai-akhir</code> Menjadi: <span class="answer-box" style="display:inline-block; padding: 0.2rem 0.5rem;">nilaiAkhir / nilai_akhir</span>[cite: 10]</p>
+        </section>
+
+        <!-- M. AKTIVITAS 9 - TANTANGAN DATA DIRI -->
+        <section>
+            <h2>M. AKTIVITAS 9 - TANTANGAN DATA DIRI</h2>
+            <p>Buat program JavaScript yang menyimpan data diri menggunakan variable (minimal 5 variable)[cite: 10, 11].</p>
+            <p><strong>Tugas - Kode Kamu:</strong>[cite: 11]</p>
+            <pre>// Tuliskan kode kamu di sini
+let nama = "Ryuga";
+let kelas = "X PPLG 2";
+let jurusan = "Pengembangan Perangkat Lunak dan Gim";
+let umur = 15;
+let hobi = "Bermain game";
+console.log(nama);
+console.log(kelas);
+console.log(jurusan);
+console.log(umur);
+console.log(hobi);</pre>
+    <img src="ss/m.jpeg" alt="Console Log Example" style="max-width: 100%; height: auto; border: 1px solid var(--border-color); border-radius: 4px; margin-top: 0.5rem;">    "
+        </section>
+
+        <!-- N. AKTIVITAS 10 - TANTANGAN LEVEL 2 -->
+        <section>
+            <h2>N. AKTIVITAS 10 - TANTANGAN LEVEL 2</h2>
+            <p>Buat program untuk menyimpan data seorang siswa: Nama siswa, Nilai Bahasa Indonesia, Nilai Matematika, Nilai Produktif[cite: 11].</p>
+            <p><strong>Tugas - Kode Kamu:</strong>[cite: 11, 12]</p>
+            <pre>let namaSiswa = "Ryuga";
+let bahasaIndonesia = 85;
+let matematika = 75;
+let produktif = 85;
+console.log(namaSiswa);
+console.log(bahasaIndonesia);
+console.log(matematika);
+console.log(produktif);</pre>
+ <img src="ss/n.jpeg" alt="Console Log Example" style="max-width: 100%; height: auto; border: 1px solid var(--border-color); border-radius: 4px; margin-top: 0.5rem;">    "
+            <h3>Pertanyaan</h3>
+            <ol>
+                <li>Berapa variable yang kamu buat?[cite: 12] <div class="answer-box">4 variable</div></li>
+                <li>Mana variable yang menyimpan teks?[cite: 12] <div class="answer-box">namaSiswa</div></li>
+                <li>Mana variable yang menyimpan angka?[cite: 12, 13] <div class="answer-box">bahasaIndonesia, matematika, produktif</div></li>
+            </ol>
+        </section>
+
+        <!-- O. AKTIVITAS 11 - DEBUGGING -->
+        <section>
+            <h2>O. AKTIVITAS 11 - DEBUGGING</h2>
+            <p>Perbaiki program berikut[cite: 13]:</p>
+            <pre>let nama siswa = "Budi";
+let umur = 16;
+let 2kelas = "XI RPL";
+console.log(nama siswa);
+console.log(umur);
+console.log(2kelas);</pre>
+            <p><strong>Program yang sudah diperbaiki:</strong>[cite: 13]</p>
+            <pre>let namaSiswa = "Budi";
+let umur = 16;
+let kelasDua = "XI RPL";
+console.log(namaSiswa);
+console.log(umur);
+console.log(kelasDua);</pre>
+            <p><strong>Apa saja kesalahan yang kamu temukan?</strong>[cite: 13]</p>
+            <ol>
+                <li>Penggunaan spasi pada nama variable <code>nama siswa</code> (tidak boleh ada spasi).</li>
+                <li>Penggunaan angka di awal nama variable <code>2kelas</code> (tidak boleh diawali angka).</li>
+                <li>Pemanggilan console.log menggunakan nama variable yang salah/mengandung spasi.</li>
+            </ol>
+        </section>
+
+        <!-- P. AKTIVITAS 12 - CHALLENGE -->
+        <section>
+            <h2>P. AKTIVITAS 12 - CHALLENGE</h2>
+            <p>Program "Profil Siswa" dengan tambahan minimal 2 variable baru[cite: 13, 14].</p>
+            <pre>const nama = "Ryuga";
+const kelas = "X PPLG 2";
+const jurusan = "Pengembangan Perangkat Lunak dan Gim";
+const umur = 15;
+const kota = "Garut";
+const hobi = "Coding";
+const citaCita = "Software Engineer";
+// 2 Variable tambahan:
+const sekolah = "SMKN 1 Garut";
+const statusSiswa = "Aktif";
+
+console.log(nama);
+console.log(kelas);
+console.log(jurusan);
+console.log(umur);
+console.log(kota);
+console.log(hobi);
+console.log(citaCita);
+console.log(sekolah);
+console.log(statusSiswa);</pre>
+        </section>
+
+        <!-- Q. AKTIVITAS 13 – THINK PAIR SHARE -->
+        <section>
+            <h2>Q. AKTIVITAS 13 – THINK PAIR SHARE</h2>
+            <p><strong>Think:</strong> Mengapa programmer membutuhkan variable?[cite: 14]</p>
+            <div class="answer-box">Programmer membutuhkan variable untuk menyimpan, mengelola, dan memanggil kembali data di dalam memori secara dinamis selama program berjalan.</div>
+            <p><strong>Pair:</strong> Apakah jawaban kalian sama?[cite: 15] <br>☑ Ya &nbsp;&nbsp; ☐ Tidak</p>
+            <p><strong>Share:</strong> Kesimpulan kelompok[cite: 15]:</p>
+            <div class="answer-box">Variable adalah elemen fundamental dalam pemrograman untuk merepresentasikan nilai data agar kode lebih terstruktur dan mudah dikelola.</div>
+        </section>
+
+        <!-- R. REFLEKSI -->
+        <section>
+            <!-- //refleksi -->
+            <h2>R. REFLEKSI</h2>
+            <p>Berikan tanda ✓ sesuai dengan pemahamanmu[cite: 15].</p>
+            <table>
+                <tr>
+                    <th>Pernyataan</th>
+                    <th>Belum Paham</th>
+                    <th>Mulai Paham</th>
+                    <th>Paham</th>
+                </tr>
+                <tr>
+                    <td>Saya memahami pengertian variable[cite: 15]</td>
+                    <td></td><td></td><td>✓</td>
+                </tr>
+                <tr>
+                    <td>Saya dapat membuat variable dengan <code>let</code>[cite: 15]</td>
+                    <td></td><td></td><td>✓</td>
+                </tr>
+                <tr>
+                    <td>Saya memahami penggunaan <code>const</code>[cite: 15]</td>
+                    <td></td><td></td><td>✓</td>
+                </tr>
+                <tr>
+                    <td>Saya dapat menyimpan data ke dalam variable[cite: 15]</td>
+                    <td></td><td></td><td>✓</td>
+                </tr>
+                <tr>
+                    <td>Saya dapat menampilkan variable dengan <code>console.log()</code>[cite: 15]</td>
+                    <td></td><td></td><td>✓</td>
+                </tr>
+                <tr>
+                    <td>Saya dapat memberikan nama variable dengan benar[cite: 15]</td>
+                    <td></td><td></td><td>✓</td>
+                </tr>
+                <tr>
+                    <td>Saya dapat menemukan kesalahan variable[cite: 15]</td>
+                    <td></td><td></td><td>✓</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- S. REFLEKSI 3-2-1 -->
+        <section>
+            <!-- //refleksi -->
+            <h2>S. REFLEKSI 3-2-1</h2>
+            <h3>3 Hal yang Saya Pelajari</h3>
+            <ol>
+                <li>Cara mendeklarasikan variable menggunakan <code>let</code> dan <code>const</code>[cite: 16].</li>
+                <li>Aturan penamaan variable yang benar di JavaScript[cite: 16].</li>
+                <li>Menampilkan nilai ke console menggunakan <code>console.log()</code>[cite: 16].</li>
+            </ol>
+            <h3>2 Hal yang Masih Membingungkan</h3>
+            <ol>
+                <li><div class="answer-box" style="display:inline-block; width:80%;">Tidak ada / sudah paham</div></li>
+                <li><div class="answer-box" style="display:inline-block; width:80%;">Tidak ada / sudah paham</div></li>
+            </ol>
+            <h3>1 Hal yang Ingin Saya Coba</h3>
+            <div class="answer-box">Membuat aplikasi interaktif sederhana menggunakan JavaScript.</div>
+        </section>
+
+        <!-- T. KESIMPULAN -->
+        <section>
+            <h2>T. KESIMPULAN</h2>
+            <p>Lengkapi kalimat berikut[cite: 16]:</p>
+            <p>Variable adalah <span class="answer-box" style="display:inline-block; padding: 0.2rem 0.5rem;">tempat atau wadah untuk menyimpan data di dalam memori program.</span>[cite: 16]</p>
+            <p><code>let</code> digunakan untuk <span class="answer-box" style="display:inline-block; padding: 0.2rem 0.5rem;">mendeklarasikan variable yang nilainya dapat diubah.</span>[cite: 8, 16]</p>
+            <p><code>const</code> digunakan untuk <span class="answer-box" style="display:inline-block; padding: 0.2rem 0.5rem;">mendeklarasikan variable yang nilainya tetap (konstan).</span>[cite: 8, 16]</p>
+            <p>Untuk menampilkan isi variable ke Console kita dapat menggunakan <span class="answer-box" style="display:inline-block; padding: 0.2rem 0.5rem;"><code>console.log()</code></span>[cite: 16]</p>
+        </section>
+
+        <!-- U. TUGAS INDIVIDU -->
+        <section>
+            <h2>U. TUGAS INDIVIDU</h2>
+            <p>Tema: "Data Produk Sederhana" (Minimal 6 variable)[cite: 17]</p>
+            <pre>const namaProduk = "Lcd monitor"";
+const kategori = "perangkat komputer";
+const harga = 300000;
+let stok = 10;
+const merek = "HP";
+const tersedia = true;
+
+console.log(namaProduk);
+console.log(kategori);
+console.log(harga);
+console.log(stok);
+console.log(merek);
+console.log(tersedia);
+ <img src="ss/u.jpeg" alt="Console Log Example" style="max-width: 100%; height: auto; border: 1px solid var(--border-color); border-radius: 4px; margin-top: 0.5rem;">   
+</pre>
+        </section>
+
+        <!-- V. PENILAIAN -->
+        <section>
+            <h2>V. PENILAIAN</h2>
+            <h3>1. Penilaian Pengetahuan</h3>
+            <table>
+                <tr>
+                    <th>Indikator</th>
+                    <th>Skor</th>
+                </tr>
+                <tr><td>Menjelaskan pengertian variable[cite: 17, 18]</td><td>20[cite: 18]</td></tr>
+                <tr><td>Menjelaskan fungsi variable[cite: 18]</td><td>15[cite: 18]</td></tr>
+                <tr><td>Membedakan let dan const[cite: 18]</td><td>20[cite: 18]</td></tr>
+                <tr><td>Menjelaskan aturan penamaan variable[cite: 18]</td><td>15[cite: 18]</td></tr>
+                <tr><td>Menjelaskan jenis data sederhana[cite: 18]</td><td>10[cite: 18]</td></tr>
+                <tr><td><strong>Total</strong></td><td><strong>80</strong>[cite: 18]</td></tr>
+            </table>
+
+            <h3>2. Penilaian Keterampilan</h3>
+            <table>
+                <tr>
+                    <th>Aspek</th>
+                    <th>1</th><th>2</th><th>3</th><th>4</th>
+                </tr>
+                <tr><td>Membuat variable[cite: 18]</td><td></td><td></td><td></td><td>✓</td></tr>
+                <tr><td>Penamaan variable[cite: 18]</td><td></td><td></td><td></td><td>✓</td></tr>
+                <tr><td>Penggunaan let / const[cite: 18]</td><td></td><td></td><td></td><td>✓</td></tr>
+                <tr><td>Menampilkan data[cite: 18]</td><td></td><td></td><td></td><td>✓</td></tr>
+                <tr><td>Ketepatan kode[cite: 18]</td><td></td><td></td><td></td><td>✓</td></tr>
+                <tr><td>Debugging[cite: 18]</td><td></td><td></td><td></td><td>✓</td></tr>
+            </table>
+        </section>
+
+        <!-- W. PENILAIAN SIKAP -->
+        <section>
+            <h2>W. PENILAIAN SIKAP</h2>
+            <table>
+                <tr>
+                    <th>Sikap</th>
+                    <th>1</th><th>2</th><th>3</th><th>4</th>
+                </tr>
+                <tr><td>Kedisiplinan[cite: 18]</td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Kerja sama[cite: 18, 19]</td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Tanggung jawab[cite: 19]</td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Keaktifan[cite: 19]</td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Ketelitian[cite: 19]</td><td></td><td></td><td></td><td></td></tr>
+            </table>
+        </section>
+
+        <!-- X. RUBRIK HASIL PROGRAM -->
+        <section>
+            <h2>X. RUBRIK HASIL PROGRAM</h2>
+            <table>
+                <tr>
+                    <th>Kriteria</th>
+                    <th>Bobot</th>
+                </tr>
+                <tr><td>Program dapat dijalankan[cite: 19]</td><td>20%[cite: 19]</td></tr>
+                <tr><td>Penggunaan variable benar[cite: 19]</td><td>20%[cite: 19]</td></tr>
+                <tr><td>Penamaan variable benar[cite: 19]</td><td>15%[cite: 19]</td></tr>
+                <tr><td>Penggunaan let dan const tepat[cite: 19]</td><td>15%[cite: 19]</td></tr>
+                <tr><td>Data yang digunakan sesuai[cite: 19]</td><td>10%[cite: 19]</td></tr>
+                <tr><td>Output berhasil ditampilkan[cite: 19]</td><td>10%[cite: 19]</td></tr>
+                <tr><td>Kerapian kode[cite: 19]</td><td>10%[cite: 19]</td></tr>
+                <tr><td><strong>Total</strong></td><td><strong>100%</strong>[cite: 19]</td></tr>
+            </table>
+        </section>
+
+        <!-- Y. EXIT TICKET -->
+        <section>
+            <h2>Y. EXIT TICKET</h2>
+            <ol>
+                <li>
+                    Apa itu variable?[cite: 19]
+                    <div class="answer-box">Wadah untuk menyimpan data di dalam memori program agar dapat digunakan kembali.</div>
+                </li>
+                <li>
+                    Apa perbedaan let dan const?[cite: 19]
+                    <div class="answer-box"><code>let</code> nilainya dapat diubah kembali, sedangkan <code>const</code> nilainya bersifat tetap (konstan) dan tidak bisa diubah.</div>
+                </li>
+                <li>
+                    Tuliskan satu contoh variable JavaScript[cite: 19].
+                    <div class="answer-box"><code>let umur = 16;</code></div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Z. PESAN UNTUK PESERTA DIDIK -->
+        <section>
+            <h2>Z. PESAN UNTUK PESERTA DIDIK</h2>
+            <p>Jangan takut ketika program menghasilkan error[cite: 19].</p>
+            <p>Error bukan berarti kamu gagal[cite: 19].</p>
+            <p>Error adalah petunjuk bahwa programmu perlu diperbaiki[cite: 19].</p>
+            <p>Programmer yang baik bukan programmer yang tidak pernah mengalami error, tetapi programmer yang mampu mencari dan memperbaiki error[cite: 19].</p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - LKPD JavaScript Variable | Ryuga - X PPLG 2</p>
+    </footer>
+
+</body>
+</html>
